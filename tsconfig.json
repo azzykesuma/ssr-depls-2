@@ -9,6 +9,7 @@
     "types": ["vite/client"],
     "jsx": "react-jsx",
     "skipLibCheck": true,
+    "noImplicitAny": false,
     "esModuleInterop": true
   },
   "ts-node": {

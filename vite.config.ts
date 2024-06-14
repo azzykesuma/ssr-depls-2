@@ -1,9 +1,15 @@
-import react from '@vitejs/plugin-react'
-import ssr from 'vite-plugin-ssr/plugin'
-import { UserConfig } from 'vite'
+import { defineConfig } from "vite";
+import VitePluginSSR from "vite-plugin-ssr/plugin";
 
-const config: UserConfig = {
-  plugins: [react(), ssr()]
-}
-
-export default config
+export default defineConfig({
+  server: {
+    host: "0.0.0.0",
+    port: 5173
+  },
+  plugins: [
+    VitePluginSSR({
+      prerender: true,
+      includeAssetsImportedByServer: true
+    })
+  ]
+});
